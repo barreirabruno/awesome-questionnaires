@@ -147,6 +147,7 @@ File name structure = timestamp + questionnaire id
     - SELECTED OPTION IDS = One or more options user has selected
 
 ## Folder structure for Questionnaires and Questions:
+```bash
 /awesome-questionnaires
     /questionnaires
         questionnaire_101.json
@@ -155,3 +156,4 @@ File name structure = timestamp + questionnaire id
     /responses
         response_20260424_101.json
         response_20260424_102.json
+```
