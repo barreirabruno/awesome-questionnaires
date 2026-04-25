@@ -1,7 +1,14 @@
 package br.com.awesomequestionnaires.CLI;
 
+import java.util.Scanner;
 
 public class MainMenu {
+
+    private Scanner scan;
+    
+    public MainMenu(Scanner scan) {
+        this.scan = scan;
+    }
 
     public String welcomeMessage() {
         return "========================================\n" + "Greetings and welcome from Awesome Questionnaires.\n" + "========================================\n";
@@ -16,9 +23,13 @@ public class MainMenu {
                         "Please, type your option ";
     }
 
-    public void boot() {
-        this.welcomeMessage();
+    public String getGeneralMenuUserOption() {
+        return this.scan.next();
     }
 
-
+    public void boot() {
+        System.out.println(this.welcomeMessage());
+        System.out.println(this.generalMenuOptions());
+        this.getGeneralMenuUserOption();
+    }
 }

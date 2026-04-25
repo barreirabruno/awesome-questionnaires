@@ -28,7 +28,7 @@ public class MainMenuTest {
 
         verify(menu, times(1)).welcomeMessage();
         verify(menu, times(1)).generalMenuOptions();
-        verify(menu, times(1)).assignGeneralMenuUserOption();
+        verify(menu, times(1)).getGeneralMenuUserOption();
     }
 
     @Test void ensureItShowsUserOptionsSuccessfully() {
@@ -44,6 +44,6 @@ public class MainMenuTest {
 
     @Test void ensureItassignGeneralMenuUserOptionSuccessfully() {
         MainMenu classUnderTest = new MainMenu(scanner);
-        assertEquals(classUnderTest.assignGeneralMenuUserOption(), "1");
+        assertEquals(classUnderTest.getGeneralMenuUserOption(), "1");
     }
 }
