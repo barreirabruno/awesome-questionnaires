@@ -6,4 +6,8 @@ public class MainMenu {
     public String welcomeMessage() {
         return "========================================\n" + "Greetings and welcome from Awesome Questionnaires.\n" + "========================================\n";
     }
+
+    public void boot() {
+        this.welcomeMessage();
+    }
 }
