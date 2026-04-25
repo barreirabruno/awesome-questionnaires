@@ -43,3 +43,7 @@ application {
     // Define the main class for the application.
     mainClass = 'br.com.awesomequestionnaires.Main'
 }
+
+tasks.named('run', JavaExec) {
+    standardInput = System.in
+}
