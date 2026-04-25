@@ -24,7 +24,7 @@ public class MainMenuTest {
         verify(menu, times(1)).welcomeMessage();
     }
 
-        @Test void ensureItShowsUserOptionsSuccessfully() {
+    @Test void ensureItShowsUserOptionsSuccessfully() {
         String expected = "Type 0 to create a new questionnaire\n" + //
                         "Type 1 for manage questionnaires\n" + //
                         "Type 2 to respond questionnaires\n" + //
