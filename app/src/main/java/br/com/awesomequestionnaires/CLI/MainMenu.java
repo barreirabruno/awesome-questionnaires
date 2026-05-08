@@ -124,13 +124,28 @@ public class MainMenu {
 
                 System.out.println(this.questionnaireActiveMessage());
                 String questionnaireActiveOption = this.scan.nextLine();
-                if(questionnaireActiveOption.equals("Yes")) {
+                if(questionnaireActiveOption.equals("Yes") || questionnaireActiveOption.equals("yes") || questionnaireActiveOption.equals("1")) {
                     questionnaire.setStatus(ActiveStatus.TRUE);
                 } else {
                     questionnaire.setStatus(ActiveStatus.FALSE);
                 }
                 this.recordQuestionnaire(questionnaireFile, questionnaire.toJson());
                 System.out.println("Questionnaire create successfully");
+                System.out.println("Type 1 to add questions\n" + "Type 2 to go back main menu\n");
+                String afterCreateQuestionnaire = this.scan.nextLine();
+                switch(afterCreateQuestionnaire) {
+                    case "1":
+                        ObjectMapper mapper = new ObjectMapper();
+                        Questionnaire questionnaireToAddQuestions = mapper.readValue(questionnaireFile.toFile(), Questionnaire.class);
+                        System.out.println("Add questions to questionnaire " + questionnaireToAddQuestions.getTitle());
+                        System.out.println(this.openFile(questionnaireFile));
+                        // String jsonQuestionnaire = this.openFile(questionnaireFile);
+                        break;
+                    default: 
+                        System.out.println("Going back to main menu");
+                        this.boot();
+                        break;
+                }
                 break;
             case "1":
                 HashMap<String, String> questionnaireNamesAndFiles = new HashMap<>();               
